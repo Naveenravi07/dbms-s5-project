@@ -1,0 +1,121 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Healthcare-themed color palette */
+  --background: #f9fafb; /* Light gray for overall background */
+  --foreground: #4b5563; /* Dark gray for primary text */
+  --card: #ffffff; /* White for cards and sections */
+  --card-foreground: #4b5563; /* Dark gray for text within cards */
+  --popover: #ffffff; /* White for popover elements */
+  --popover-foreground: #4b5563; /* Dark gray for popover text */
+  --primary: #0891b2; /* Cyan for main actions */
+  --primary-foreground: #ffffff; /* White text on primary buttons */
+  --secondary: #6366f1; /* Accent blue for secondary actions */
+  --secondary-foreground: #ffffff; /* White text on secondary buttons */
+  --muted: #f9fafb; /* Light gray for muted text */
+  --muted-foreground: #6b7280; /* Medium gray for muted text */
+  --accent: #6366f1; /* Accent color for highlights */
+  --accent-foreground: #ffffff; /* White text on accent elements */
+  --destructive: #dc2626; /* Red for errors or cancellations */
+  --destructive-foreground: #ffffff; /* White text on destructive actions */
+  --border: #e5e7eb; /* Light gray for borders */
+  --input: #ffffff; /* White for input fields */
+  --ring: rgba(8, 145, 178, 0.2); /* Primary color with opacity for focus states */
+  --chart-1: #0891b2; /* For charts and data visualization */
+  --chart-2: #6366f1; /* For charts and data visualization */
+  --chart-3: #4b5563; /* For charts and data visualization */
+  --chart-4: #e5e7eb; /* For charts and data visualization */
+  --chart-5: #dc2626; /* For charts and data visualization */
+  --radius: 0.5rem; /* Rounded corners for a softer look */
+  --sidebar: #ffffff; /* White for sidebar background */
+  --sidebar-foreground: #4b5563; /* Dark gray for sidebar text */
+  --sidebar-primary: #0891b2; /* Primary cyan for sidebar primary elements */
+  --sidebar-primary-foreground: #ffffff; /* White text on sidebar primary */
+  --sidebar-accent: #f0f9ff; /* Light blue for sidebar highlights */
+  --sidebar-accent-foreground: #0891b2; /* Primary cyan for sidebar accent text */
+  --sidebar-border: #e5e7eb; /* Light gray for sidebar borders */
+  --sidebar-ring: rgba(8, 145, 178, 0.2); /* Primary color with opacity for sidebar focus */
+}
+
+.dark {
+  --background: #1f2937; /* Dark gray for overall background */
+  --foreground: #f9fafb; /* Light gray for primary text */
+  --card: #374151; /* Medium dark gray for cards */
+  --card-foreground: #f9fafb; /* Light gray for text within cards */
+  --popover: #374151; /* Medium dark gray for popover elements */
+  --popover-foreground: #f9fafb; /* Light gray for popover text */
+  --primary: #06b6d4; /* Lighter cyan for dark mode */
+  --primary-foreground: #1f2937; /* Dark gray text on primary buttons */
+  --secondary: #8b5cf6; /* Lighter purple for dark mode */
+  --secondary-foreground: #1f2937; /* Dark gray text on secondary buttons */
+  --muted: #4b5563; /* Medium gray for muted backgrounds */
+  --muted-foreground: #9ca3af; /* Light gray for muted text */
+  --accent: #8b5cf6; /* Lighter purple for accents */
+  --accent-foreground: #1f2937; /* Dark gray text on accent elements */
+  --destructive: #ef4444; /* Lighter red for dark mode */
+  --destructive-foreground: #1f2937; /* Dark gray text on destructive actions */
+  --border: #4b5563; /* Medium gray for borders */
+  --input: #374151; /* Medium dark gray for input fields */
+  --ring: rgba(6, 182, 212, 0.3); /* Primary color with opacity for focus states */
+  --sidebar: #374151; /* Medium dark gray for sidebar */
+  --sidebar-foreground: #f9fafb; /* Light gray for sidebar text */
+  --sidebar-primary: #06b6d4; /* Primary cyan for sidebar primary elements */
+  --sidebar-primary-foreground: #1f2937; /* Dark gray text on sidebar primary */
+  --sidebar-accent: #1e3a8a; /* Dark blue for sidebar highlights */
+  --sidebar-accent-foreground: #06b6d4; /* Primary cyan for sidebar accent text */
+  --sidebar-border: #4b5563; /* Medium gray for sidebar borders */
+  --sidebar-ring: rgba(6, 182, 212, 0.3); /* Primary color with opacity for sidebar focus */
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
